@@ -29,16 +29,22 @@ if (points / 2) % 2 == 0:
 
 rotate_angle = 180 - point_angle
 
-
+#For each point, add the degrees of rotation to the queue.
 for i in range(points - 1):
     rotation_queue.append(rotate_angle)     #This is O(1).
 
+'''
+For each angle in the rotation queue, walk forward and turn the degrees specified by the next
+value in the queue.
+'''
 forward(t , 100)
 while len(rotation_queue) > 0:
     rotation = rotation_queue.pop(0)        #This is O(1).
 
     right(t, rotation)
     forward(t , 100)
-    
 
-sleep(5)
+
+#Keep open until X button pressed.
+turtle.exitonclick()
+turtle.mainloop()

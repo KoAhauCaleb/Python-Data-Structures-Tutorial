@@ -1,64 +1,9 @@
 from random import randint
 import time
 
-class CustomSet:
-    
-    def __init__(self, size = 1000):
-        self.size = size
-        self.values = [None for i in range(size)]
-        self.value_count = 0
-        self.conflict_count = 0
+#Replace this with CustomSet class.
 
-    def hash(self, value):
-        hash = (value % self.size)
-        return hash
-
-    def add(self, value):
-        if not self.conflict(value):
-            self.values[self.hash(value)] = value
-            self.value_count += 1
-
-    def contains(self, value):
-        if self.conflicting_val(value) == value:
-            return True
-        return False
-
-    def conflicting_val(self, value):
-        return self.values[self.hash(value)]
-
-    def conflict(self, value):
-        if self.conflicting_val(value) is not None:
-            return True
-        return False
-        
-
-class SetTree:
-
-    class Node:
-        
-        def __init__(self):
-            self.values = CustomSet()
-            self.left = None
-            self.right = None
-    
-    def __init__(self):
-        self.root = self.Node()
-        self.node_count = 0
-        self.value_count = 0
-
-    def add(self, value):
-        self._add(self.root, value)
-
-    def _add(self, node, value):
-        pass
-        
-    def contains(self, value):
-        return self._contains(self.root, value)
-
-    def _contains(self, node, value):
-        pass
-
-
+#Replace this with the modified BinaryTree class named SetTree.
 
 set_tree = SetTree()
 fast_set = CustomSet(1000)
